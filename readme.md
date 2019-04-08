@@ -15,7 +15,7 @@ sudo docker run -d \
 -v /DOWNLOAD_DIR:/data \
 -v /CONFIG_DIR:/conf \
 -e SECRET=YOUR_SECRET_CODE \
-redwid/aria2-ng:amd64
+redwid/aria2-ng:latest
 ```
   
 II. Open `http://serverip:6801/` for aria2-ng
