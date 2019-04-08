@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM __BASE_IMAGE_ARCH__/alpine:3.7
 
 ARG ARIA_NG_VERSION=1.0.2
 
