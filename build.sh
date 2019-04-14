@@ -25,8 +25,8 @@ done
 
 
 #Commands to create docker manifest
-#docker manifest create redwid/aria2-ng:latest redwid/aria2-ng:amd64 redwid/aria2-ng:arm32v7 redwid/aria2-ng:arm64v8
-#docker manifest annotate redwid/aria2-ng:latest redwid/aria2-ng:arm32v7 --os linux --arch arm
-#docker manifest annotate redwid/aria2-ng:latest redwid/aria2-ng:arm64v8 --os linux --arch arm64 --variant armv8
-#docker manifest push redwid/aria2-ng:latest
+docker manifest create redwid/aria2-ng:latest redwid/aria2-ng:amd64 redwid/aria2-ng:arm32v7 redwid/aria2-ng:arm64v8
+docker manifest annotate redwid/aria2-ng:latest redwid/aria2-ng:arm32v7 --os linux --arch arm
+docker manifest annotate redwid/aria2-ng:latest redwid/aria2-ng:arm64v8 --os linux --arch arm64 --variant armv8
+docker manifest push redwid/aria2-ng:latest
 
