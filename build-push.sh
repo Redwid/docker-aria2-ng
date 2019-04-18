@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #Source: https://lobradov.github.io/Building-docker-multiarch-images/
+set -e
 
 arch_array=('amd64' 'arm32v7' 'arm64v8')
 
@@ -26,6 +27,8 @@ done
 #Login if needed
 if [ -z "$DOCKER_EMAIL" ]
 then
+    echo
+else
     docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
 fi
 
