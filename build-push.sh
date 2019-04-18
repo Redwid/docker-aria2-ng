@@ -27,10 +27,12 @@ else
     docker login -u $DOCKER_USER -p $DOCKER_PASS
 fi
 
-echo '[INFO] Build and push image'
+echo '[INFO] Build and push images'
 for docker_arch in "${arch_array[@]}"
 do
+  echo "[INFO] Build image: ${docker_arch}"
   docker build -f Dockerfile.${docker_arch} -t redwid/aria2-ng:${docker_arch} .
+  echo "[INFO] Push image: ${docker_arch}"
   docker push redwid/aria2-ng:${docker_arch}
 done
 
