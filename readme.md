@@ -21,7 +21,9 @@ redwid/aria2-ng:latest
 II. Open `http://serverip:6801/` for aria2-ng
 
 ### Build:  
-Run build.sh 
+Run build-run.sh
+
+[![Build Status](https://travis-ci.com/Redwid/docker-aria2-ng.svg?branch=master)](https://travis-ci.com/Redwid/docker-aria2-ng) 
 
 ### Help commands: 
 #### Remove all:
