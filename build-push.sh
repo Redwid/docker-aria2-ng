@@ -11,6 +11,7 @@ do
 done
 
 echo '[INFO] Replace __BASE_IMAGE_ARCH__ to actual arch'
+ls -a
 for docker_arch in "${arch_array[@]}"
 do
   cp Dockerfile Dockerfile.${docker_arch}
