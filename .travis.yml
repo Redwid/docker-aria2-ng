@@ -4,10 +4,10 @@ services:
   - docker
 
 before_install:
-  - cat $HOME/.docker/config.json
   - sudo apt -qq update -y
   - sudo apt -qq install --only-upgrade docker-ce -y
   - docker info
+  - cat $HOME/.docker/config.json
 
 script:
   - bash build-push.sh
