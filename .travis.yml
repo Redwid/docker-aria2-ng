@@ -1,7 +1,12 @@
 sudo: required
 
 services:
-- docker
+  - docker
+
+before_install:
+  - sudo apt -qq update -y
+  - sudo apt -qq install --only-upgrade docker-ce -y
+  - docker info
 
 script:
   - bash build-push.sh
