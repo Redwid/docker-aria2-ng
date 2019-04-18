@@ -7,6 +7,7 @@ before_install:
   - sudo apt -qq update -y
   - sudo apt -qq install --only-upgrade docker-ce -y
   - docker info
+  - mkdir $HOME/.docker/
   - echo "{\"experimental\" : \"enabled\"}" >> $HOME/.docker/config.json
   - cat $HOME/.docker/config.json
 
