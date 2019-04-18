@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Source: https://lobradov.github.io/Building-docker-multiarch-images/
-set -e
+#set -e
 
 arch_array=('amd64' 'arm32v7' 'arm64v8')
 
