@@ -15,7 +15,7 @@ ls -a
 for docker_arch in "${arch_array[@]}"
 do
   cp -v "Dockerfile" "Dockerfile.${docker_arch}"
-  sed -i Dockerfile.${docker_arch} "s|__BASE_IMAGE_ARCH__|${docker_arch}|g" Dockerfile.${docker_arch}
+  sed -i.bak "s|__BASE_IMAGE_ARCH__|${docker_arch}|g" Dockerfile.${docker_arch}
 done
 
 echo '[INFO] Build and push image'
