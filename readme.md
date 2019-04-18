@@ -42,7 +42,7 @@ Run build-run.sh
 ```sudo lsof -n -i -P | grep ':6801'```
 
 
-### Link:  
+### Links:  
 https://github.com/aria2/aria2  
 https://github.com/mayswind/AriaNg  
 
