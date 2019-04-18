@@ -7,14 +7,14 @@ arch_array=('amd64' 'arm32v7' 'arm64v8')
 echo '[INFO] Clean up'
 for docker_arch in "${arch_array[@]}"
 do
-  rm -f Dockerfile.${docker_arch}
+  rm -f "Dockerfile.${docker_arch}"
 done
 
 echo '[INFO] Replace __BASE_IMAGE_ARCH__ to actual arch'
 ls -a
 for docker_arch in "${arch_array[@]}"
 do
-  cp Dockerfile Dockerfile.${docker_arch}
+  cp -v "Dockerfile" "Dockerfile.${docker_arch}"
   sed -i "" "s|__BASE_IMAGE_ARCH__|${docker_arch}|g" Dockerfile.${docker_arch}
 done
 
