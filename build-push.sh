@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Source: https://lobradov.github.io/Building-docker-multiarch-images/
 
-arch_array=( amd64 arm32v7 arm64v8 )
+arch_array=('amd64' 'arm32v7' 'arm64v8')
 
 #Clean up
 for docker_arch in "${arch_array[@]}"
