@@ -18,13 +18,6 @@ do
   sed -i.bak "s|__BASE_IMAGE_ARCH__|${docker_arch}|g" Dockerfile.${docker_arch}
 done
 
-echo '[INFO] Build and push image'
-for docker_arch in "${arch_array[@]}"
-do
-  docker build -f Dockerfile.${docker_arch} -t redwid/aria2-ng:${docker_arch} .
-  docker push redwid/aria2-ng:${docker_arch}
-done
-
 #Login if needed
 if [ -z "$DOCKER_EMAIL" ]
 then
@@ -33,6 +26,13 @@ else
     echo '[INFO] Login to docker'
     docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
 fi
+
+echo '[INFO] Build and push image'
+for docker_arch in "${arch_array[@]}"
+do
+  docker build -f Dockerfile.${docker_arch} -t redwid/aria2-ng:${docker_arch} .
+  docker push redwid/aria2-ng:${docker_arch}
+done
 
 echo '[INFO] Create docker and push docker manifest'
 docker manifest create redwid/aria2-ng:latest redwid/aria2-ng:amd64 redwid/aria2-ng:arm32v7 redwid/aria2-ng:arm64v8
