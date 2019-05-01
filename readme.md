@@ -23,6 +23,8 @@ II. Open `http://serverip:6801/` for aria2-ng
 ### Build:  
 Run build-run.sh
 
+Remove existing manifest before building: https://github.com/docker/cli/issues/954 
+
 [![Build Status](https://travis-ci.com/Redwid/docker-aria2-ng.svg?branch=master)](https://travis-ci.com/Redwid/docker-aria2-ng) 
 
 ### Help commands: 
