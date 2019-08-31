@@ -1,6 +1,6 @@
 FROM __BASE_IMAGE_ARCH__/alpine:3.9
 
-ARG ARIA_NG_VERSION=1.1.0
+ARG ARIA_NG_VERSION=1.1.3
 
 RUN apk update && \
 	apk add --no-cache --update bash && \
