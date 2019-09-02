@@ -32,16 +32,16 @@ echo '[INFO] Build and push images'
 for docker_arch in "${arch_array[@]}"
 do
   echo "[INFO] Build image: ${docker_arch}"
-  docker build -f Dockerfile.${docker_arch} -t redwid/aria2-ng:${docker_arch} .
-  echo "[INFO] Push image: ${docker_arch}"
-  docker push redwid/aria2-ng:${docker_arch}
+  docker build -f Dockerfile.${docker_arch} -t redwid/aria2-ng:${docker_arch}_${version} .
+  echo "[INFO] Push image: ${docker_arch}_${version}"
+  docker push redwid/aria2-ng:${docker_arch}_${version}
 done
 
 echo '[INFO] Create docker and push docker manifest'
-docker manifest create --amend redwid/aria2-ng:$version redwid/aria2-ng:amd64 redwid/aria2-ng:arm32v7 redwid/aria2-ng:arm64v8
-docker manifest annotate redwid/aria2-ng:$version redwid/aria2-ng:arm32v7 --os linux --arch arm
-docker manifest annotate redwid/aria2-ng:$version redwid/aria2-ng:arm64v8 --os linux --arch arm64 --variant armv8
-docker manifest push redwid/aria2-ng:$version
+docker manifest create --amend redwid/aria2-ng:${version} redwid/aria2-ng:amd64_${version} redwid/aria2-ng:arm32v7_${version} redwid/aria2-ng:arm64v8_${version}
+docker manifest annotate redwid/aria2-ng:${version} redwid/aria2-ng:arm32v7_${version} --os linux --arch arm
+docker manifest annotate redwid/aria2-ng:${version} redwid/aria2-ng:arm64v8_${version} --os linux --arch arm64 --variant armv8
+docker manifest push redwid/aria2-ng:${version}
 
 echo '[INFO] Done'
 
