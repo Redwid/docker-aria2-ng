@@ -2,7 +2,7 @@
 #Source: https://lobradov.github.io/Building-docker-multiarch-images/
 #set -e
 
-version='1.1.3'
+version='1.1.4'
 arch_array=('amd64' 'arm32v7' 'arm64v8')
 
 echo '[INFO] Clean up'
