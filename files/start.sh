@@ -9,5 +9,5 @@ fi
 mkdir /data/.aria2
 touch /data/.aria2/aria2.session
 
-nginx -g "daemon off;" &
+lighttpd -D -f /etc/lighttpd/lighttpd.conf &
 aria2c --conf-path=/conf/aria2.conf
